@@ -5,12 +5,12 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-  }
+}
   
-  /*********************/
-  /* CUSTOM PROPERTIES */
-  /*********************/
-  :root {
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
 	font-size: 16px; /* 1rem = 16px */
 	--primary-color: #986c2a; /* Golden Accent */
 	--secondary-color: #222; /* Dark Shade */
@@ -22,26 +22,26 @@
 	--bg-color: #ffffff; /* Background color for cards and content */
 	--border-color: #ddd; /* Default border color */
 	color-scheme: light dark; /* Support for system light/dark modes */
-  }
-  
-  /* Default Styles */
-  body {
+}
+
+/* Default Styles */
+body {
 	background-color: var(--light-color);
 	color: var(--text-color);
 	overflow-x: hidden; /* Prevent horizontal scrolling issues */
-  }
-  
-  a {
+}
+
+a {
 	color: var(--primary-color);
 	text-decoration: none;
-  }
-  
-  a:hover {
+}
+
+a:hover {
 	color: var(--link-hover-color);
-  }
-  
-  /* Dark Mode */
-  html:has([value="dark"]:checked) {
+}
+
+/* Dark Mode */
+html:has([value="dark"]:checked) {
 	--primary-color: #f0b74b;
 	--secondary-color: #111;
 	--light-color: #181818;
@@ -49,10 +49,10 @@
 	--link-hover-color: #fbb34b;
 	--bg-color: #202020;
 	--border-color: #444;
-  }
-  
-  /* Light Mode */
-  html:has([value="light"]:checked) {
+}
+
+/* Light Mode */
+html:has([value="light"]:checked) {
 	--primary-color: #986c2a; /* Golden Accent */
 	--secondary-color: #222; /* Dark Shade */
 	--light-color: #fff; /* White */
@@ -60,43 +60,45 @@
 	--link-hover-color: #e0921b; /* Link hover effect */
 	--bg-color: #ffffff; /* Background color for cards and content */
 	--border-color: #ddd; /* Default border color */
-  }
-  
-  /* Add smooth transition for theme changes */
-  html {
+}
+
+/* Add smooth transition for theme changes */
+html {
 	transition: background-color 0.3s ease, color 0.3s ease;
 	overflow-x: hidden;
 	overflow-y: auto; 
-  }
-  
-  /* Side Navigation in Dark Mode */
+}
+
+/* Side Navigation in Dark Mode */
 html:has([value="dark"]:checked) .side-nav {
 	background-color: var(--secondary-color); /* Darker background */
-  }
-  
-  html:has([value="dark"]:checked) .side-nav ul li a {
+}
+
+html:has([value="dark"]:checked) .side-nav ul li a {
 	color: var(--text-color); /* Light text color for links */
-  }
-  
-  html:has([value="dark"]:checked) .side-nav ul li a:hover {
+}
+
+html:has([value="dark"]:checked) .side-nav ul li a:hover {
 	color: var(--link-hover-color); /* Adjust hover color */
-  }
+}
+
 /* Specific fix for grid and flex issues */
 .hero, .product-grid, .carousel, .social-feed {
 	max-width: 100%; /* Prevent grid and flex containers from overflowing */
 	overflow: hidden; /* Safeguard against content overflow */
-  }
-  
-  /* Responsive Images and Content */
-  img, video, iframe {
+}
+
+/* Responsive Images and Content */
+img, video, iframe {
 	max-width: 100%; /* Ensure media does not exceed container width */
 	height: auto; /* Maintain aspect ratio */
-  }
-  /* Handle side navigation overflow */
-  .side-nav {
+}
+
+/* Handle side navigation overflow */
+.side-nav {
 	overflow-y: auto; /* Prevent horizontal scrolling on the side navigation */
 	max-width: 100%; /* Ensure it fits within the viewport */
-  }
+}
 
 /* Announcement Bar */
 .announcement-bar {
@@ -110,10 +112,10 @@ html:has([value="dark"]:checked) .side-nav {
 	position: relative;
 	overflow: hidden; /* Ensures scrolling text is contained */
 	margin-right: 0;
-  }
-  
-  /* Scrolling Text Container */
-  .sf__scrolling-text {
+}
+
+/* Scrolling Text Container */
+.sf__scrolling-text {
 	width: 100%;
 	height: auto;
 	display: flex;
@@ -124,27 +126,27 @@ html:has([value="dark"]:checked) .side-nav {
 	white-space: nowrap;
 	vertical-align: baseline;
 	animation: scrollText 10s linear infinite; /* Apply scrolling animation */
-  }
-  
-  /* Scroll Text Animation */
-  @keyframes scrollText {
+}
+
+/* Scroll Text Animation */
+@keyframes scrollText {
 	0% {
-	  transform: translateX(100%); /* Start from the right */
+		transform: translateX(100%); /* Start from the right */
 	}
 	100% {
-	  transform: translateX(-100%); /* End at the left */
+		transform: translateX(-100%); /* End at the left */
 	}
-  }
-  
-  /* White Background Announcement Bar */
-  .announcement-bar-white {
+}
+
+/* White Background Announcement Bar */
+.announcement-bar-white {
 	background-color: #f0f0f0; /* Light background */
 	padding: 10px 0;
 	text-align: center;
-  }
-  
-  /* Scrolling Text Style for White Background */
-  .sf__scrolling-text- {
+}
+
+/* Scrolling Text Style for White Background */
+.sf__scrolling-text- {
 	font-size: 1.2rem;
 	margin: 0;
 	font-weight: bold;
@@ -158,20 +160,21 @@ html:has([value="dark"]:checked) .side-nav {
 	white-space: nowrap;
 	vertical-align: baseline;
 	animation: scrollText 10s linear infinite;
-  }
+}
 
-  @keyframes scrolltext{
+@keyframes scrolltext{
 	0% {
-	  transform: translateX(100%); /* Start from the right */
+		transform: translateX(100%); /* Start from the right */
 	}
 	100% {
-	  transform: translateX(-100%); /* End at the left */
+		transform: translateX(-100%); /* End at the left */
 	}
-  }
+}
+
 /*****************/
 /* HEADER STYLES */
 header {
-    display: flex;
+
     justify-content: space-between; /* Space between logo and nav icons */
     align-items: center; /* Center elements vertically */
     background-color: var(--light-color);
@@ -180,10 +183,10 @@ header {
     top: 0;
     z-index: 10;
 }
-  
-  /* Desktop Header */
-  .header-2__desktop {
-	display: flex;
+
+/* Desktop Header */
+.header-2__desktop {
+	
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px 20px;
@@ -192,24 +195,23 @@ header {
 	position: sticky;
 	top: 0;
 	z-index: 1000;
-  }
-  
-  
-  /* Left and Right Header Sections */
-  .header-left,
-  .header-right {
-	  display: flex;
-	  flex-shrink: 0;
-	  align-items: center; /* Align items vertically */
-	  gap: 1rem; /* Space between icons */
-  }
-  
-  .header-right {
-	  justify-content: flex-end; /* Right-align icons */
-  }
-  
-  /* Center the Logo */
-  .nav-logo {
+}
+
+/* Left and Right Header Sections */
+.header-left,
+.header-right {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center; /* Align items vertically */
+	gap: 1rem; /* Space between icons */
+}
+
+.header-right {
+	justify-content: flex-end; /* Right-align icons */
+}
+
+/* Center the Logo */
+.nav-logo {
     flex: 1; /* Takes available space */
     display: flex;
     justify-content: center; /* Centers the logo */
@@ -223,8 +225,8 @@ header {
 	margin-left:0.5em;
 }
 
-  /* Side Navigation (Initially hidden) */
-  .side-nav {
+/* Side Navigation (Initially hidden) */
+.side-nav {
 	position: fixed;
 	top: 0;
 	left: -250px; /* Initially hidden */
@@ -235,42 +237,42 @@ header {
 	z-index: 2000; /* Above everything else */
 	padding-top: 60px;
 	transition: left 0.3s ease;
-  }
-  
-  .side-nav.open {
+}
+
+.side-nav.open {
 	left: 0; /* Slide in */
-  }
-  
-  .side-nav ul {
+}
+
+.side-nav ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-  }
-  
-  .side-nav ul li {
+}
+
+.side-nav ul li {
 	padding: 15px 20px;
-  }
-  
-  .side-nav ul li a {
+}
+
+.side-nav ul li a {
 	text-decoration: none;
 	color: var(--light-color);
 	font-size: 1.2rem;
-  }
-  
-  .side-nav ul li a:hover {
+}
+
+.side-nav ul li a:hover {
 	color: var(--link-hover-color);
-  }
-  
-  /* Navigation Toggle Button */
-  .nav-toggle {
+}
+
+/* Navigation Toggle Button */
+.nav-toggle {
 	border: none;
 	font-size: 1.5rem;
 	cursor: pointer;
 	background-color:var(--bg-color);
 	color: var(--primary-color);
-  }
-  
-  .close-btn {
+}
+
+.close-btn {
 	font-size: 2rem;
 	color: var(--light-color);
 	background: none;
@@ -279,24 +281,21 @@ header {
 	top: 10px;
 	right: 20px;
 	cursor: pointer;
-  }
-  
-   
-  /* Icon Styling */
-  .icon img,
-  .search-toggle img {
+}
+
+/* Icon Styling */
+.icon img,
+.search-toggle img {
 	width: 24px;
 	height: 24px;
 	cursor: pointer;
 	flex: 1;
     text-align: right;
 	margin-right:0.27em;
-  }
-  
-  
-  
-  /* Responsive Design for Smaller Screens */
-  @media (min-width:430) {
+}
+
+/* === Small screens (≤430px) === */
+@media (max-width: 430px) {
     header {
         flex-wrap: wrap; /* Allow wrapping on smaller screens */
         padding: 0.75rem;
@@ -315,24 +314,79 @@ header {
     .nav-logo img {
         max-height: 40px; /* Reduce logo size */
     }
-	.side-nav {
-		left: -250px; /* Hide by default on small screens */
-	  }
-} 
-  /* Hero Section */
-  #hero-back,.responsive-image {
+
+    .side-nav {
+        left: -250px; /* Hide by default on small screens */
+    }
+}
+
+/* === Tablet (≥768px) === */
+@media (min-width: 768px) {
+    header {
+        flex-wrap: nowrap;
+        padding: 1rem 2rem;
+    }
+
+    .header-left,
+    .header-right {
+        justify-content: flex-start; /* Normal alignment */
+        flex: none;
+    }
+
+    .nav-logo {
+        order: 0; /* Reset logo order */
+        margin: 0 1rem;
+    }
+
+    .nav-logo img {
+        max-height: 50px; /* Slightly bigger logo */
+    }
+
+    .side-nav {
+        position: static; /* Inline menu */
+        left: 0;
+        width: auto;
+        height: auto;
+        background: none; /* Remove overlay style */
+        color: inherit;
+        padding-top: 0;
+    }
+
+    .side-nav ul {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .side-nav ul li {
+        padding: 0;
+    }
+}
+
+/* === Desktop (≥1024px) === */
+@media (min-width: 1024px) {
+    header {
+        padding: 1.5rem 3rem;
+    }
+
+    .nav-logo img {
+        max-height: 60px;
+    }
+}
+
+/* Hero Section */
+#hero-back,.responsive-image {
 	position: relative;
 	background: center/contain no-repeat; /* Use contain instead of cover */
   	background-color: #333; /* Fallback background color */
   	width: 100%;
   	transition: margin-top 0.3s ease; /* Adjust based on the height of the header */
-  }
+}
 
-	#hero-back{
+#hero-back{
 	grid-row: 1 / 6;
     grid-column: 1 / -1;
 }
-  .hero {
+.hero {
 	text-align: center;
 	background-color: var(--primary-color);
 	color: var(--light-color);
@@ -340,18 +394,18 @@ header {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: repeat(6, 1fr);
     min-height: 70vh;
-  }
-  
-  .hero h1 {
+}
+
+.hero h1 {
 	font-size: 2rem;
-  }
-  
-  .hero p {
+}
+
+.hero p {
 	font-size: 1.25rem;
 	margin: 1rem 0;
-  }
-  
-  .cta-button {
+}
+
+.cta-button {
 	display: inline-block;
 	line-height: 0px;
 	margin: 0 0 4rem;
@@ -367,15 +421,13 @@ header {
 	grid-row: 5 / 6;
     grid-column: 2 / 4;
     z-index: 2;
-	
-  }
+}
 
 .newsletter button {
   color: var(--light-color); /* White or light color for the text */
 }
-  
-  /* Reviews Section */
- /* Carousel Container */
+
+/* Reviews Section */
 .carousel {
 	display: flex;
 	align-items: center;
@@ -386,35 +438,35 @@ header {
 	margin: auto;
 	padding: 1rem;
 	overflow: hidden; /* Hide overflowing reviews */
-  }
-  
-  /* Review Track */
-  .carousel-track {
+}
+
+/* Review Track */
+.carousel-track {
 	display: flex;
 	transition: transform 0.5s ease-in-out;
-  }
-  
-  /* Each Review Item */
-  .carousel-item {
+}
+
+/* Each Review Item */
+.carousel-item {
 	flex: 0 0 100%; /* Each item takes full width */
 	padding: 20px;
 	text-align: center;
 	background-color: #f9f9f9;
 	border: 1px solid #ddd;
 	border-radius: 8px;
-  }
-  
-  .carousel-item h3 {
+}
+
+.carousel-item h3 {
 	margin-bottom: 0.5rem;
-  }
-  
-  .carousel-item p {
+}
+
+.carousel-item p {
 	font-size: 1.1rem;
 	color: #555;
-  }
-  
-  /* Carousel Controls (Prev/Next Buttons) */
-  .carousel-control {
+}
+
+/* Carousel Controls (Prev/Next Buttons) */
+.carousel-control {
 	background: none;
 	border: none;
 	font-size: 2rem;
@@ -424,70 +476,67 @@ header {
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 10;
-  }
-  
-  .carousel-control.prev {
+}
+
+.carousel-control.prev {
 	left: 10px;
-  }
-  
-  .carousel-control.next {
+}
+
+.carousel-control.next {
 	right: 10px;
-  }
-  
-  /* Hover effect for buttons */
-  .carousel-control:hover {
+}
+
+/* Hover effect for buttons */
+.carousel-control:hover {
 	color: #e0921b; /* Brighten hover color */
-  }
-  
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
 	.carousel-item {
 	  max-width: 90%; /* Reduce width on smaller screens */
 	}
-  }
-  
-  .responsive-image {
+}
+
+.responsive-image {
 	width: 100%;
 	height: auto;
 	display: block;
-  }
-  
-  /* Featured Products */
-  .featured-products {
+}
+
+/* Featured Products */
+.featured-products {
 	padding: 2rem var(--padding);
-  }
-  
-  .featured-products h2 {
+}
+
+.featured-products h2 {
 	font-size: 1.75rem;
 	margin-bottom: 1rem;
-  }
-  
-  .product-grid {
+}
+
+.product-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr; /* 2 columns for mobile */
 	gap: 1rem; /* Space between grid items */
-  }
-  
+}
 
-  
-  .product img {
+.product img {
 	width: 100%;
 	height: auto;
 	border-radius: 0.5rem;
-  }
-  
-  .product h3 {
+}
+
+.product h3 {
 	font-size: 1.25rem;
 	margin: 0.5rem 0;
-  }
-  
-  .product p {
+}
+
+.product p {
 	font-size: 1rem;
 	color: var(--primary-color);
-  }
-  
-  
-  /* TikTok Carousel Section */
+}
+
+/* TikTok Carousel Section */
 .social-section {
     padding: 2rem;
     text-align: center;
@@ -562,33 +611,32 @@ header {
     }
 }
 
-  
-  /* Newsletter Section */
-  .newsletter {
+/* Newsletter Section */
+.newsletter {
 	text-align: center;
 	padding: 2rem var(--padding);
 	background-color: #fafafa;
-  }
-  
-  .newsletter h2 {
+}
+
+.newsletter h2 {
 	font-size: 1.75rem;
-  }
-  
-  .newsletter form {
+}
+
+.newsletter form {
 	display: flex;
 	justify-content: center;
 	gap: 0.5rem;
 	margin-top: 1rem;
-  }
-  
-  .newsletter input {
+}
+
+.newsletter input {
 	padding: 0.75em;
 	font-size: 1rem;
 	border: 1px solid #ddd;
 	border-radius: var(--border-radius);
-  }
-  
-  .newsletter button {
+}
+
+.newsletter button {
 	padding: 0.75em 1.5em;
 	font-size: 1rem;
 	background-color: var(--primary-color);
@@ -596,59 +644,55 @@ header {
 	border: none;
 	border-radius: var(--border-radius);
 	cursor: pointer;
-  }
-  
-  .newsletter button:hover {
+}
+
+.newsletter button:hover {
 	background-color: var(--link-hover-color);
-  }
-  
-  /* Footer */
-  footer {
+}
+
+/* Footer */
+footer {
 	padding: 1rem var(--padding);
 	background-color: var(--secondary-color);
 	color: var(--light-color);
 	text-align: center;
-  }
-  
-  .footer-top ul {
+}
+
+.footer-top ul {
 	list-style: none;
 	display: flex;
 	justify-content: center;
 	gap: 1.5rem;
 	padding: 0;
 	margin: 0;
-  }
-  
-  .footer-top ul li a {
+}
+
+.footer-top ul li a {
 	color: var(--light-color);
 	text-decoration: none;
-  }
-  
-  .footer-top ul li a:hover {
+}
+
+.footer-top ul li a:hover {
 	color: var(--link-hover-color);
-  }
-  
-  .footer-bottom {
+}
+
+.footer-bottom {
 	margin-top: 1rem;
 	font-size: 0.875rem; /* Slightly smaller font */
-  }
-  
-  /* Responsive Design: Mobile First */
-  
-  
-	.reviews {
-	  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-	}
-  
-	.carousel {
-	  gap: 2rem;
-	}
-  
-  
-  @media (min-width: 1024px) {
+}
+
+/* Responsive Design: Mobile First */
+.reviews {
+	grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.carousel {
+	gap: 2rem;
+}
+
+@media (min-width: 1024px) {
 	/* Update layout for larger screens */
 	.product-grid {
 	  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 	}
-  }
-  
+}
