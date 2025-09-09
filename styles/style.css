@@ -403,6 +403,8 @@ header {
 .hero p {
 	font-size: 1.25rem;
 	margin: 1rem 0;
+	text-align: center;
+	grid-column: 2 / 4;
 }
 
 .cta-button {
