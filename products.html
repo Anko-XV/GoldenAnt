@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden Ant - Shop</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Ant - Products</title>
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Golden Ant</div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Shop</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <button id="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
-    </header>
+  <!-- Header -->
+  <header>
+    <nav class="header-2__desktop">
+      <div class="header-left">
+        <button class="nav-toggle">☰</button>
+        <a class="search-toggle"><img src="./images/search-icon.svg" alt="Search" /></a>
+      </div>
+      <div class="nav-logo">
+        <a href="home.html"><img src="./images/GA-WORD-B-goldstar(3).png" alt="Golden Ant Logo" /></a>
+      </div>
+      <div class="header-right">
+        <a href="#login" class="icon"><img src="./images/user-icon.svg" alt="User Login" /></a>
+        <a href="#cart" class="icon"><img src="./images/cart-icon.svg" alt="Shopping Cart" /></a>
+      </div>
 
-    <main>
-        <section class="product-list">
+      <!-- Side Navigation -->
+      <aside class="side-nav">
+        <button class="close-btn">×</button>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#reviews">New Arrivals</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="#community">LookBook</a></li>
+        </ul>
+      </aside>
+    </nav>
+  </header>
+<main>
+  <section class="product-list">
             <h1>Our Products</h1>
             <div class="filter">
                 <label for="sort">Sort By:</label>
@@ -30,28 +44,227 @@
                     <option value="price-desc">Price (High to Low)</option>
                 </select>
             </div>
-            <div class="product-grid">
-                <div class="product">
-                    <img src="product1.jpg" alt="Golden Bracelet">
-                    <h3>Golden Bracelet</h3>
-                    <p>$199.99</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div class="product">
-                    <img src="product2.jpg" alt="Ant Sculpture">
-                    <h3>Ant Sculpture</h3>
-                    <p>$49.99</p>
-                    <button>Add to Cart</button>
-                </div>
-                <!-- Add more products -->
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2024 Golden Ant. All Rights Reserved.</p>
-    </footer>
+<!-- Featured Products: Attack on Titan -->
+<section id="products-aot" class="featured-products" aria-label="Attack on Titan Products">
+    <h2>Attack on Titan</h2>
+    <ul class="product-grid">
+        <li class="product-card">
+            <figure>
+                <img src="./images/cloak-aot.jpg" alt="Survey Cloak Jacket" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Survey Cloak Jacket</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/jacket-aot.jpg" alt="Survey Jacket" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Survey Jacket</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/levishirt-aot.jpg" alt="Levi Shirt" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Levi Shirt</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/deck-aot.jpg" alt="Skate Deck with Titan Design" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Skate Deck</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/mikasashirt-aot.jpg" alt="Mikasa Shirt" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Mikasa Shirt</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/pants-aot.jpg" alt="Survey Corps Pants" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Survey Corps Pants</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+    </ul>
+</section>
 
-    <script src="/scripts/script.js"></script>
+<!-- Featured Products: Astroboy -->
+<section id="products-astro" class="featured-products" aria-label="Astroboy Products">
+    <h2>Astroboy</h2>
+    <ul class="product-grid">
+        <li class="product-card">
+            <figure>
+                <img src="./images/astro-rug.jpg" alt="Astro boy rug" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Astro boy rug</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/astro-necklace.jpg" alt="Astro boy necklace" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Astro boy necklace</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/astro-shirt-male.jpg" alt="Astro boy shirt" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Astro boy shirt</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/astro-tote.jpg" alt="Astro tote" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Astro tote</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/Astro-Candle-black-look-2.jpg" alt="Astro candle black" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Astro candle (black)</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/Astro-Candle-cream-look-2.jpg" alt="Astro candle beige" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Astro candle (beige)</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/Astro-jacket.jpg" alt="Astro boy jacket" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Astro boy jacket</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+        <li class="product-card">
+            <figure>
+                <img src="./images/Astro-sakuratee.jpg" alt="Astro boy sakura tee" />
+                <figcaption>
+                    <button class="btn">Quick View</button>
+                    <button class="btn">Add to Cart</button>
+                </figcaption>
+            </figure>
+            <article class="product-info">
+                <h3>Astro boy sakuratee</h3>
+                <p>$150.00</p>
+            </article>
+        </li>
+    </ul>
+</section>
+
+  </main>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="community">
+    <h2>Join Our Community</h2>
+    <form>
+      <label for="email">Enter your email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <section class="footer-top">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+    </section>
+    <p>© Golden Ant. All rights reserved.</p>
+  </footer>
+
+  <script src="./scripts/script.js"></script>
 </body>
 </html>

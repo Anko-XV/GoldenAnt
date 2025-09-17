@@ -8,21 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navToggle.addEventListener("click", () => sideNav.classList.add("open"));
     closeBtn.addEventListener("click", () => sideNav.classList.remove("open"));
   }
-
-  // Dark Mode Toggle
-  const darkModeToggle = document.querySelector('.dark-mode-toggle');
-  const body = document.body;
-  if (darkModeToggle) {
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
-    });
-  }
-
   // Smooth Scroll for Anchor Links
   const links = document.querySelectorAll("a[href^='#']");
   links.forEach((link) => {
@@ -44,36 +29,59 @@ document.addEventListener("DOMContentLoaded", () => {
     header.addEventListener("mouseleave", () => hero.classList.remove("hovered"));
   }
 
-  // Carousel Initialization
-  const carouselPrev = document.querySelector('.carousel-control.prev');
-  const carouselNext = document.querySelector('.carousel-control.next');
-  const carouselTrack = document.querySelector('.carousel-track');
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  let carouselIndex = 0;
+// Carousel Initialization
+const carouselPrev = document.querySelector('.carousel-controlLeft');
+const carouselNext = document.querySelector('.carousel-controlRight');
+const carouselTrack = document.querySelector('.carousel-track');
+const carouselItems = document.querySelectorAll('.carousel-item');
+let carouselIndex = 0;
+let autoSlide;
 
-  if (carouselPrev && carouselNext && carouselTrack && carouselItems.length > 0) {
-    const updateCarousel = () => {
-      const itemWidth = carouselItems[0].getBoundingClientRect().width;
-      carouselTrack.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
-    };
+if (carouselPrev && carouselNext && carouselTrack && carouselItems.length > 0) {
+  const updateCarousel = () => {
+    const itemWidth = carouselItems[0].getBoundingClientRect().width;
+    carouselTrack.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
+  };
 
-    carouselPrev.addEventListener('click', () => {
-      if (carouselIndex > 0) {
-        carouselIndex--;
-        updateCarousel();
-      }
-    });
-
-    carouselNext.addEventListener('click', () => {
-      if (carouselIndex < carouselItems.length - 1) {
-        carouselIndex++;
-        updateCarousel();
-      }
-    });
-
-    window.addEventListener('resize', updateCarousel);
+  const moveNext = () => {
+    carouselIndex = (carouselIndex + 1) % carouselItems.length; // loop forward
     updateCarousel();
-  }
+  };
+
+  const movePrev = () => {
+    carouselIndex = (carouselIndex - 1 + carouselItems.length) % carouselItems.length; // loop backward
+    updateCarousel();
+  };
+
+  // Button controls
+  carouselNext.addEventListener('click', () => {
+    moveNext();
+    resetAutoSlide();
+  });
+
+  carouselPrev.addEventListener('click', () => {
+    movePrev();
+    resetAutoSlide();
+  });
+
+  // Auto-slide
+  const startAutoSlide = () => {
+    autoSlide = setInterval(moveNext, 5000); // slide every 5s
+  };
+
+  const resetAutoSlide = () => {
+    clearInterval(autoSlide);
+    startAutoSlide();
+  };
+
+  // Responsive
+  window.addEventListener('resize', updateCarousel);
+
+  // Initialize
+  updateCarousel();
+  startAutoSlide();
+}
+
 
   // Newsletter Form Submission
   const form = document.querySelector(".newsletter form");
