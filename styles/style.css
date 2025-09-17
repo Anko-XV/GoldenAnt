@@ -192,13 +192,56 @@ header { justify-content:space-between; align-items:center; background-color:var
 
 /* Social Feed */
 .social-section { padding:2rem; text-align:center; }
-.carousel-tiktok { display:flex; align-items:center; position:relative; overflow:hidden; width:100%; max-width:800px; margin:auto; }
-.social-feed { display:flex; gap:1rem; transition:transform .3s ease-in-out; }
-.social-item { flex:0 0 auto; width:100%; max-width:300px; height: 100%; border-radius:8px; overflow:hidden; }
-.carousel-left, .carousel-right { background:none; border:none; font-size:2rem; color:var(--primary-color); cursor:pointer; position:absolute; top:50%; transform:translateY(-50%); z-index:10; }
-.carousel-left { left:10px; }
-.carousel-right { right:10px; }
-.carousel-left:hover, .carousel-right:hover { color:var(--link-hover-color); }
+
+.carousel-tiktok {
+  display:flex; 
+  align-items:center; 
+  position:relative; 
+  max-width:800px; 
+  margin:auto;
+}
+
+.carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.social-feed {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.social-item {
+  flex: 0 0 100%;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.carousel-dots .dot.active {
+  background-color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+.carousel-dots .dot:hover {
+  background-color: var(--link-hover-color);
+}
+
 
 
 /* Newsletter */

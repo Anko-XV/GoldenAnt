@@ -29,127 +29,58 @@ document.addEventListener("DOMContentLoaded", () => {
     header.addEventListener("mouseenter", () => hero.classList.add("hovered"));
     header.addEventListener("mouseleave", () => hero.classList.remove("hovered"));
   }
+// tiktok carousel
+const feedWrapper = document.querySelector('.carousel-track-wrapper');
+const feed = document.querySelector('.social-feed');
+const socialItems = document.querySelectorAll('.social-item video');
+const dots = document.querySelectorAll('.carousel-dots .dot');
+let socialIndex = 0;
+let autoSlide;
 
-  // ======= Carousel =======
-  const carouselPrev = document.querySelector('.carousel-controlLeft');
-  const carouselNext = document.querySelector('.carousel-controlRight');
-  const carouselTrack = document.querySelector('.carousel-track');
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  let carouselIndex = 0;
-  let autoSlide;
+// Update carousel to a specific index
+const updateCarousel = (index) => {
+  const wrapperWidth = feedWrapper.clientWidth;
+  feed.style.transform = `translateX(-${index * wrapperWidth}px)`;
+  socialIndex = index;
 
-  if (carouselPrev && carouselNext && carouselTrack && carouselItems.length > 0) {
-    const updateCarousel = () => {
-      const itemWidth = carouselItems[0].getBoundingClientRect().width;
-      carouselTrack.style.transform = `translateX(-${carouselIndex * itemWidth}px)`;
-    };
+  socialItems.forEach(vid => {
+    vid.pause();
+    vid.currentTime = 0;
+  });
+  socialItems[socialIndex].play();
 
-    const moveNext = () => {
-      carouselIndex = (carouselIndex + 1) % carouselItems.length;
-      updateCarousel();
-    };
+  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+};
 
-    const movePrev = () => {
-      carouselIndex = (carouselIndex - 1 + carouselItems.length) % carouselItems.length;
-      updateCarousel();
-    };
+// Dot click navigation
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    updateCarousel(i);
+    resetAutoSlide();
+  });
+});
 
-    carouselNext.addEventListener('click', () => {
-      moveNext();
-      resetAutoSlide();
-    });
+// Autoplay
+const startAutoSlide = () => {
+  autoSlide = setInterval(() => {
+    let nextIndex = (socialIndex + 1) % socialItems.length;
+    updateCarousel(nextIndex);
+  }, 5000); // change every 5 seconds
+};
 
-    carouselPrev.addEventListener('click', () => {
-      movePrev();
-      resetAutoSlide();
-    });
+const resetAutoSlide = () => {
+  clearInterval(autoSlide);
+  startAutoSlide();
+};
 
-    const startAutoSlide = () => autoSlide = setInterval(moveNext, 5000);
-    const resetAutoSlide = () => {
-      clearInterval(autoSlide);
-      startAutoSlide();
-    };
+// Responsive
+window.addEventListener('resize', () => updateCarousel(socialIndex));
 
-    window.addEventListener('resize', updateCarousel);
+// Initialize
+updateCarousel(0);
+startAutoSlide();
 
-    updateCarousel();
-    startAutoSlide();
-  }
 
-  // ======= Newsletter Form =======
-  const form = document.querySelector(".newsletter form");
-  if (form) {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const emailInput = form.querySelector('input[type="email"]');
-      const email = emailInput ? emailInput.value : "";
-
-      if (email && /\S+@\S+\.\S+/.test(email)) {
-        alert(`Thank you for subscribing, ${email}!`);
-        form.reset();
-      } else {
-        alert("Please enter a valid email address.");
-      }
-    });
-  }
-
-  // ======= Social Feed Carousel =======
-  const leftButton = document.querySelector('.carousel-left');
-  const rightButton = document.querySelector('.carousel-right');
-  const feed = document.querySelector('.social-feed');
-  const socialItems = document.querySelectorAll('.social-item video');
-  let socialIndex = 0;
-
-  const scrollToIndex = (index) => {
-    if (!feed || socialItems.length === 0) return;
-    const itemWidth = socialItems[0].parentElement.getBoundingClientRect().width;
-    feed.style.transform = `translateX(-${index * itemWidth}px)`;
-    socialIndex = index;
-
-    socialItems.forEach(vid => {
-      vid.pause();
-      vid.currentTime = 0;
-    });
-    socialItems[socialIndex].play();
-
-    // Update dots if present
-    if (dots.length > 0) updateDots(index);
-  };
-
-  if (leftButton && rightButton && feed && socialItems.length > 0) {
-    leftButton.addEventListener('click', () => {
-      socialIndex = (socialIndex - 1 + socialItems.length) % socialItems.length;
-      scrollToIndex(socialIndex);
-    });
-
-    rightButton.addEventListener('click', () => {
-      socialIndex = (socialIndex + 1) % socialItems.length;
-      scrollToIndex(socialIndex);
-    });
-
-    socialItems.forEach((video, index) => {
-      video.addEventListener('ended', () => {
-        let nextIndex = (index + 1) % socialItems.length;
-        scrollToIndex(nextIndex);
-      });
-    });
-
-    window.addEventListener('resize', () => scrollToIndex(socialIndex));
-    scrollToIndex(0);
-  }
-
-  // ======= Dots Progress Indicator =======
-  const dots = document.querySelectorAll('.carousel-dots .dot');
-  const updateDots = (index) => {
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
-  };
-
-  if (dots.length > 0) {
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => scrollToIndex(index));
-    });
-    updateDots(0);
-  }
 
   // ======= Product Category Filter =======
   const filter = document.getElementById('category-filter');
