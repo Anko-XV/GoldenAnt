@@ -1,20 +1,20 @@
-/**************/
-/* CSS REMEDY */
-/**************/
-*, *::after, *::before {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-  
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************//**************/ 
 /* CSS REMEDY */ 
 /**************/ 
-*, *::after, *::before { box-sizing: border-box; margin:0; padding:0; } 
+*, *::after, *::before { box-sizing: border-box; margin:0; padding:0; 
+font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+} 
+
+
+
+
 
 :root {
+
 	font-size: 16px; /* 1rem = 16px */
 	--primary-color: #986c2a; /* Golden Accent */
 	--secondary-color: #222; /* Dark Shade */
