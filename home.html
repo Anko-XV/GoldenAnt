@@ -5,7 +5,7 @@
     <meta name="author" content="Anko">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Golden Ant</title>
-    <link href="./styles/style.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/ga-logo_32x32.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,9 +14,9 @@
 <body>
 
 <!-- Announcement Bar -->
-<section class="announcement-bar" aria-label="Announcement">
-    <marquee class="sf__scrolling-text"behavior="slide">🚨 GOLDEN ANT X ATTACK ON TITAN 🚨</marquee>
-</section>
+
+    <marquee aria-label="Announcement" class="sf__scrolling-text"behavior="slide">🚨 GOLDEN ANT X ATTACK ON TITAN 🚨</marquee>
+
 
 <!-- Header Section -->
 <header>
@@ -55,9 +55,9 @@
         </aside>
     </nav>
 </header>
-
-<!-- Hero Section -->
-<header id="hero" class="hero" aria-label="Hero Section">
+ <main>
+<!-- Hero Section uL -->
+<section id="hero" class="hero" aria-label="Hero Section">
     <img 
         id="hero-back" 
         src="./images/AOT-LOOKBOOK-BANNER-MOBILE_e3d290a5-d907-42a6-9ab3-81bd8cd0cb33_540x.jpg" 
@@ -70,9 +70,9 @@
        
         <a href="products.html" class="cta-button" aria-label="Shop Now">Shop Now</a>
     </div>
-</header>
+  </section>
 
-<!-- Customer Reviews Section -->
+<!-- Customer Reviews Section ul -->
  <h2>Customers love us</h2>
 <section class="carousel" aria-label="Customer Reviews">
     <div class="carousel-track">
@@ -99,11 +99,11 @@
     </div>
 </section>
 <!-- Announcement Bar -->
-<section class="announcement-bar" aria-label="Announcement">
-    <marquee class="sf__scrolling-text" behavior="slide">🚨 GOLDEN ANT X Bluelock 🚨</marquee>
-</section>
 
-<!-- Featured Products Section: Bluelock -->
+    <marquee class="sf__scrolling-text" behavior="slide">🚨 GOLDEN ANT X Bluelock 🚨</marquee>
+
+
+<!-- Featured Products Section: Bluelock ul -->
  <h2>Bluelock</h2>
  <section id="products" class="featured-products">
 	<div class="product-grid">
@@ -131,9 +131,9 @@
 
 
 <!-- Announcement Bar -->
-<section class="announcement-bar" aria-label="Announcement">
+
     <marquee class="sf__scrolling-text" behavior="slide">🚨 GOLDEN ANT X ATTACK ON TITAN 🚨</marquee>
-</section>
+
 
 <!-- Featured Products Section: Attack on Titan -->
  <h2>Attack on Titan</h2>
@@ -173,9 +173,8 @@
   </section>
 
 <!-- Announcement Bar -->
-<section class="announcement-bar" aria-label="Announcement">
+
     <marquee class="sf__scrolling-text" behavior="slide">🚨 GOLDEN ANT X AstroBoy🚨</marquee>
-</section>
 
 <!-- Featured Products Section: Astroboy -->
 <section id="products" class="featured-products">
@@ -223,10 +222,11 @@
 	  </div>
 	</div>
 </section>
-<!-- tiktok carousel reuse of customer carousel -->
- <h2>Customers love us</h2>
+<!-- tiktok carousel reuse of customer carousel  -->
+
 <section class="carousel" aria-label="Customer Reviews">
-    <div class="carousel-track">
+   <h2>Customers love us</h2>
+   <ul class="carousel-track">
         <article class="carousel-item">
             <video src="./images/aot-tiktok.mp4" autoplay muted playsinline aria-label="Attack on Titan merch showcase"></video>
         </article>
@@ -236,10 +236,11 @@
         <article class="carousel-item">
             <video src="./images/astroboy-tiktok.mp4" autoplay muted playsinline aria-label="Astro Boy retro collection"></video>
         </article>
-		<article class="carousel-item">
+		<li class="carousel-item">
              <video src="./images/onepiece_bags (1).mp4" autoplay muted playsinline aria-label="One Piece themed bags"></video>
-        </article>
-    </div>
+    </li>
+    
+ </ul>
     
 </section>
 
@@ -252,6 +253,8 @@
         <button type="submit" aria-label="Subscribe">Subscribe</button>
     </form>
 </section>
+
+</main>
 <!-- Footer Section -->
 <footer>
     <nav class="footer-top" aria-label="Footer Navigation">
@@ -265,6 +268,6 @@
 </footer>
 
 
-  <script src="./scripts/script.js"></script>
+  <script src="scripts/script.js"></script>
 </body>
 </html>
