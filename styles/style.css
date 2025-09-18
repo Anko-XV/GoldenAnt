@@ -75,7 +75,7 @@ header { justify-content:space-between; align-items:center; background-color:var
 
 
 /* Carousel */
-.carousel { display:flex; align-items:center; justify-content:center; position:relative; width:100%; max-width:1000px; margin:auto; padding:1rem; overflow:hidden; }
+.carousel { display:flex; align-items:center; justify-content:center; position:relative; width:100%; margin:auto; padding:1rem; overflow:hidden; }
 .carousel-track { display:flex; transition:transform .5s ease-in-out; }
 .carousel-item { flex:0 0 100%; padding:20px; text-align:center; background-color:#f9f9f9; border:1px solid #ddd; border-radius:8px; }
 @media (min-width:600px){ .carousel-item{ flex:0 0 50%; } }
@@ -189,58 +189,6 @@ header { justify-content:space-between; align-items:center; background-color:var
   font-size: 0.95rem;
 }
 
-
-/* Social Feed */
-.social-section { padding:2rem; text-align:center; }
-
-.carousel-tiktok {
-  display:flex; 
-  align-items:center; 
-  position:relative; 
-  max-width:800px; 
-  margin:auto;
-}
-
-.carousel-track-wrapper {
-  overflow: hidden;
-  width: 100%;
-}
-
-.social-feed {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.social-item {
-  flex: 0 0 100%;
-}
-
-/* Carousel Dots */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  gap: 0.5rem;
-}
-
-.carousel-dots .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--border-color);
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.carousel-dots .dot.active {
-  background-color: var(--primary-color);
-  transform: scale(1.2);
-}
-
-.carousel-dots .dot:hover {
-  background-color: var(--link-hover-color);
-}
 
 
 

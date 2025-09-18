@@ -29,58 +29,69 @@ document.addEventListener("DOMContentLoaded", () => {
     header.addEventListener("mouseenter", () => hero.classList.add("hovered"));
     header.addEventListener("mouseleave", () => hero.classList.remove("hovered"));
   }
-// tiktok carousel
-const feedWrapper = document.querySelector('.carousel-track-wrapper');
-const feed = document.querySelector('.social-feed');
-const socialItems = document.querySelectorAll('.social-item video');
-const dots = document.querySelectorAll('.carousel-dots .dot');
-let socialIndex = 0;
+
+  // ======= Customer Reviews Carousel =======
+const reviewTrack = document.querySelector('.carousel-track');
+const reviewItems = document.querySelectorAll('.carousel-item');
+const prevBtn = document.querySelector('.carousel-controlLeft');
+const nextBtn = document.querySelector('.carousel-controlRight');
+
+let reviewIndex = 0;
 let autoSlide;
 
-// Update carousel to a specific index
-const updateCarousel = (index) => {
-  const wrapperWidth = feedWrapper.clientWidth;
-  feed.style.transform = `translateX(-${index * wrapperWidth}px)`;
-  socialIndex = index;
-
-  socialItems.forEach(vid => {
-    vid.pause();
-    vid.currentTime = 0;
-  });
-  socialItems[socialIndex].play();
-
-  dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+// Update carousel position
+const updateReviewCarousel = (index) => {
+  const itemWidth = reviewItems[0].getBoundingClientRect().width;
+  reviewTrack.style.transform = `translateX(-${index * itemWidth}px)`;
+  reviewIndex = index;
 };
 
-// Dot click navigation
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    updateCarousel(i);
-    resetAutoSlide();
-  });
+// Go to next review
+const nextReview = () => {
+  reviewIndex = (reviewIndex + 1) % reviewItems.length;
+  updateReviewCarousel(reviewIndex);
+};
+
+// Go to previous review
+const prevReview = () => {
+  reviewIndex = (reviewIndex - 1 + reviewItems.length) % reviewItems.length;
+  updateReviewCarousel(reviewIndex);
+};
+
+// Auto-slide setup
+const startAutoSlide = () => {
+  stopAutoSlide(); // clear any running interval
+  autoSlide = setInterval(nextReview, 5000); // 5 seconds
+};
+const stopAutoSlide = () => clearInterval(autoSlide);
+
+// Button controls
+prevBtn.addEventListener('click', () => {
+  prevReview();
+  startAutoSlide();
+});
+nextBtn.addEventListener('click', () => {
+  nextReview();
+  startAutoSlide();
 });
 
-// Autoplay
-const startAutoSlide = () => {
-  autoSlide = setInterval(() => {
-    let nextIndex = (socialIndex + 1) % socialItems.length;
-    updateCarousel(nextIndex);
-  }, 5000); // change every 5 seconds
-};
+// Keyboard controls
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    prevReview();
+    startAutoSlide();
+  } else if (e.key === 'ArrowRight') {
+    nextReview();
+    startAutoSlide();
+  }
+});
 
-const resetAutoSlide = () => {
-  clearInterval(autoSlide);
-  startAutoSlide();
-};
+// Resize handling
+window.addEventListener('resize', () => updateReviewCarousel(reviewIndex));
 
-// Responsive
-window.addEventListener('resize', () => updateCarousel(socialIndex));
-
-// Initialize
-updateCarousel(0);
+// Init
+updateReviewCarousel(0);
 startAutoSlide();
-
-
 
   // ======= Product Category Filter =======
   const filter = document.getElementById('category-filter');
