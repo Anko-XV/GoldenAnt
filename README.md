@@ -265,8 +265,14 @@ Het responsive maken van de hero image kostte veel tijd.
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+1. MDN Web Docs – documentatie over HTML, CSS, JS.
+
+2. ChatGPT – hulp bij debuggen van CSS/JS en bij schrijven van toegankelijke code.
+
+<a href="(https://css-tricks.com/css-carousels/)">
+   3. CSS-Tricks – artikel over carousels en grids.             
+ </a>
+
+4. W3C Accessibility Guidelines.
 
 </details>
