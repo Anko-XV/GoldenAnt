@@ -40,11 +40,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   hier de naam van de pagina  
-  <img src="/1shopgoldenant.com_(iPhone SE).png" width="375px" alt="omschrijving van de pagina">
+  <img src="images/1shopgoldenant.com_(iPhone SE).png" width="375px" alt="omschrijving van de pagina">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
-  <img src="/1shopgoldenant.com_collections_frontpage(iPhone SE).png1shopgoldenant.com_collections_frontpage(iPhone SE).png" width="375px" alt="omschrijving van de pagina">
+  <img src="images/1shopgoldenant.com_collections_frontpage(iPhone SE).png" width="375px" alt="omschrijving van de pagina">
  
 </details>
 
@@ -179,8 +179,13 @@ Het voorkomen dat filters en producten door elkaar heen sprongen bij resizing.
   <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
 
   ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+  Verbeteringen sinds de eerste test:
 
+Alle video’s kregen play/pause knoppen met duidelijke labels.
+
+Ik heb de carousel bedienbaar gemaakt met toetsenbord pijltjestoetsen.
+
+Buttons hebben een hover/focus-staat voor beter visueel feedback.
 </details>
 
 
@@ -226,19 +231,25 @@ Het voorkomen dat filters en producten door elkaar heen sprongen bij resizing.
   <summary>uitwerken voor eindgesprek</summary>
 
   ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+  <img src="images/my-fullsite.png" width="375px" alt="uitomst opdracht 1">
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+Ik kan nu zelf een carousel bouwen met JS (autoslide + handmatige controls).
+<img src="images/carousel-1.png" width="375px" alt="top">
 
+Ik weet hoe je CSS Grid en Flexbox gebruikt voor layouts.
+
+Ik heb geleerd hoe belangrijk semantiek en toegankelijkheid zijn.
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+Soms werkte de play-knoppen van de video’s niet direct → debugging nodig.
+<img src="images\tiktok-caru.png" width="375px" alt="bummer">
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+Het responsive maken van de hero image kostte veel tijd.
+
+  <img src="images/127.0.0.1_5500_home.html(iPhone 14 Pro Max).png" width="375px" alt="bummer">
 </details>
 
 
