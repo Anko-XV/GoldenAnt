@@ -33,8 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ======= Customer Reviews Carousel =======
 const reviewTrack = document.querySelector('.carousel-track');
 const reviewItems = document.querySelectorAll('.carousel-item');
-const prevBtn = document.querySelector('.carousel-controlLeft');
-const nextBtn = document.querySelector('.carousel-controlRight');
+
 
 let reviewIndex = 0;
 let autoSlide;
@@ -134,3 +133,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// video button 
+
+// Select all video wrappers
+const videoWrappers = document.querySelectorAll('.video-wrapper');
+
+videoWrappers.forEach(wrapper => {
+  const video = wrapper.querySelector('video');
+  const button = wrapper.querySelector('.video-toggle');
+
+  // Initial button state
+  button.textContent = '▶️';
+
+  // Toggle play/pause on button click
+  button.addEventListener('click', () => {
+    if (video.paused) {
+      video.play();
+      button.textContent = '⏸️';
+    } else {
+      video.pause();
+      button.textContent = '▶️';
+    }
+  });
+
+  // Optional: update button if video ends
+  video.addEventListener('ended', () => {
+    button.textContent = '▶️';
+  });
+});
+
