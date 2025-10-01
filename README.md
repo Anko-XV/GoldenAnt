@@ -57,6 +57,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
+  
+Ik heb geleerd dat alt-teksten bij afbeeldingen belangrijk zijn voor screenreaders.
+
+Buttons moeten altijd een aria-label krijgen als er geen tekst in staat (zoals bij icon-buttons).
+
+Contrasten tussen tekst en achtergrond moeten voldoende zijn.
 
 </details>
 
@@ -88,8 +94,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 1<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Wat ging goed:
 
+Het bouwen van een hero section met achtergrondafbeelding en CTA-button.
+
+Het gebruiken van CSS variabelen om kleuren en spacing consistent te houden.
+
+Wat lastig was:
+
+De hero image goed laten schalen (cover vs contain).
+
+Zorgen dat het side-nav menu altijd boven de hero zichtbaar is.
 
   ### Agenda voor meeting
   samen met je groepje opstellen
@@ -121,7 +136,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 2<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+ Wat ging goed:
+
+Ik heb een product grid gemaakt met <ul> en <li> in plaats van <div> → semantisch correcter.
+
+Ik heb geleerd hoe je met media queries de grid responsive maakt.
+
+Wat lastig was:
+
+Het combineren van filters (select option) met JavaScript filtering.
+
+Het voorkomen dat filters en producten door elkaar heen sprongen bij resizing.
 
 
   ### Agenda voor meeting
